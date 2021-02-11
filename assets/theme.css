@@ -7047,25 +7047,27 @@ hr {
   position: relative;
 }
 
-.right .chain__link {
+.chain__link {
+  position: absolute;
   height: calc(50% + 40px);
-  margin-left: -40px;
+  width: calc(50% + 40px - 5px);
   border: solid #D0715A 2px;
   border-bottom: 0;
-  border-left: 0;
-  width: calc(50% + 40px);
-  position: absolute;
   top: 50%;
+}
+
+.right .chain__link {
+  margin-left: -40px;
+  border-left: 0;
 }
 
 .left .chain__link {
   left: 50%;
-  height: calc(50% + 40px);
-  border: solid #D0715A 2px;
-  border-bottom: 0;
   margin-right: -40px;
   border-right: 0;
-  width: calc(50% + 40px);
-  position: absolute;
-  top: 50%;
+}
+
+.section__sub-heading {
+  font-weight: bold;
+  margin-bottom: 30px;
 }

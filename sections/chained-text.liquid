@@ -2,9 +2,11 @@
     <div class="section-container">
         <div class="grid__container two-columns chained-text__grid">
             <div class="left">
-                <div class="section__sub-heading">
-                    {{ section.settings.header1 }}
-                </div>
+                {% unless section.settings.header1 == blank %}
+                    <div class="section__sub-heading">
+                        {{ section.settings.header1 }}
+                    </div>
+                {% endunless %}
                 <div class="rich__text">
                     {{ section.settings.text1 }}
                 </div>
@@ -20,17 +22,21 @@
                 </div>
             </div>
             <div class="right">
-                <div class="section__sub-heading">
-                    {{ section.settings.header2 }}
-                </div>
+                {% unless section.settings.header2 == blank %}
+                    <div class="section__sub-heading">
+                        {{ section.settings.header2 }}
+                    </div>
+                {% endunless %}
                 <div class="rich__text">
                     {{ section.settings.text2 }}
                 </div>
             </div>
             <div class="left">
-                <div class="section__sub-heading">
-                    {{ section.settings.header3 }}
-                </div>
+                {% unless section.settings.header3 == blank %}
+                    <div class="section__sub-heading">
+                        {{ section.settings.header3 }}
+                    </div>
+                {% endunless %}
                 <div class="rich__text">
                     {{ section.settings.text3 }}
                 </div>
@@ -46,9 +52,11 @@
                 </div>
             </div>
             <div class="right">
-                <div class="section__sub-heading">
-                    {{ section.settings.header4 }}
-                </div>
+                {% unless section.settings.header4 == blank %}
+                    <div class="section__sub-heading">
+                        {{ section.settings.header4 }}
+                    </div>
+                {% endunless %}
                 <div class="rich__text">
                     {{ section.settings.text4 }}
                 </div>
@@ -83,8 +91,18 @@
         },
         {
             "type": "text",
+            "id": "header1",
+            "label": "Header 1"
+        },
+        {
+            "type": "text",
             "id": "text1",
             "label": "Text 1"
+        },
+        {
+            "type": "text",
+            "id": "header2",
+            "label": "Header 2"
         },
         {
             "type": "text",
@@ -93,8 +111,18 @@
         },
         {
             "type": "text",
+            "id": "header3",
+            "label": "Header 3"
+        },
+        {
+            "type": "text",
             "id": "text3",
             "label": "Text 3"
+        },
+        {
+            "type": "text",
+            "id": "header4",
+            "label": "Header 4"
         },
         {
             "type": "text",
