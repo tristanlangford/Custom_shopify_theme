@@ -1,15 +1,20 @@
-<div class="page-width rich-text">
-    <div class="grid">
-      <div class="grid__item {% unless section.settings.full_width %} {% endunless %}">
-        {% if section.settings.section_title != blank %}
-          <div class="rich-text__heading--{{ section.settings.text_size }} text-center">
-            <h2 class="h3">{{ section.settings.section_title | escape }}</h2>
-          </div>
-        {% endif %}
+<div class="text-and-image-container">
+    <div class="grid section-container">
+      <div class="grid__item">
+
         {% if section.settings.text != blank %}
+
             {% if section.settings.text_side == "left" %}
+
                 <div class="grid__container two-columns">
-                    <div class="rich-text__text--{{ section.settings.text_size }} rte-setting text-{{ section.settings.text_align }}">{{ section.settings.text }}</div>
+                    <div class="rich-text__text--{{ section.settings.text_size }} rte-setting text-{{ section.settings.text_align }}">
+                      {% if section.settings.section_title != blank %}
+                        <div class="rich-text__heading--{{ section.settings.text_size }}">
+                          <h2 class="h3">{{ section.settings.section_title | escape }}</h2>
+                        </div>
+                      {% endif %}
+                      {{ section.settings.text }}
+                    </div>
                     {% if section.settings.image1 %}
                       <div class="grid__image">
                           <img src="{{ section.settings.image1| img_url: '720x720' }}">
@@ -27,13 +32,26 @@
                 {% else %}
                     <div></div>
                 {% endif %}
-                    <div class="rich-text__text--{{ section.settings.text_size }} rte-setting text-{{ section.settings.text_align }}">{{ section.settings.text }}</div>
+                  <div class="rich-text__text--{{ section.settings.text_size }} rte-setting text-{{ section.settings.text_align }}">
+                    {% if section.settings.section_title != blank %}
+                      <div class="rich-text__heading--{{ section.settings.text_size }}">
+                       <h2 class="h3">{{ section.settings.section_title | escape }}</h2>
+                      </div>
+                    {% endif %}
+                    {{ section.settings.text }}
+                  </div>
                 </div>
             {% endif %}
         {% endif %}
       </div>
     </div>
   </div>
+
+  {% style %}
+  .text-and-image-container {
+    background-color: {{ section.settings.background_color }}
+  }
+{% endstyle %}
   
  {% schema %}
  {
@@ -104,31 +122,10 @@
         ]
      },
      {
-       "type": "checkbox",
-       "id": "full_width",
-       "label": {
-         "cs": "Zobrazení na šířku",
-         "da": "Bred visning",
-         "de": "Breitbild-Display",
-         "en": "Wide display",
-         "es": "Pantalla ancha",
-         "fi": "Laaja näyttö",
-         "fr": "Affichage large",
-         "it": "Visualizzazione ampia",
-         "ja": "ワイドディスプレイ",
-         "ko": "너비 표시",
-         "nb": "Bred visning",
-         "nl": "Brede weergave",
-         "pl": "Szerokie wyświetlanie",
-         "pt-BR": "Exibição ampla",
-         "pt-PT": "Exibição ampla",
-         "sv": "Breddvisning",
-         "th": "การแสดงผลแบบกว้าง",
-         "tr": "Geniş görünüm",
-         "vi": "Hiển thị rộng",
-         "zh-CN": "宽显示屏",
-         "zh-TW": "寬螢幕"
-       }
+       "type": "text",
+       "id": "background_color",
+       "label": "Background Color (HEX code)",
+       "default": "#FFFFFF"
      },
      {
        "type": "text",

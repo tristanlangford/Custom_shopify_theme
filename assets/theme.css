@@ -376,17 +376,6 @@ select,
 textarea {
   touch-action: manipulation; }
 
-/* Custom grids */
-
-.grid__container {
-  display: grid;
-}
-
-.two-columns {
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-}
-
 /*============================================================================
   #Grid
 ==============================================================================*/
@@ -1176,7 +1165,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  margin: 0 0 17.5px;
+  margin: 0 0 38px;
   font-family: var(--font-stack-header);
   font-style: var(--font-style-header);
   font-weight: var(--font-weight-header);
@@ -2112,7 +2101,8 @@ body.prevent-scrolling {
 
 .page-width {
   padding-left: 55px;
-  padding-right: 55px; }
+  padding-right: 55px; 
+}
   @media only screen and (max-width: 749px) {
     .page-width {
       padding-left: 22px;
@@ -7009,7 +6999,33 @@ hr {
   margin-bottom: 0; }
 
 /* full page layouts */
-
 .content-container {
-  width: 90%;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw + 1.3%);
 }
+
+.text-and-image-container {
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.section-container {
+  max-width: 1400px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin: 0 auto;
+}
+
+/* Custom grids */
+
+.grid__container {
+  display: grid;
+}
+
+.two-columns {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
