@@ -376,6 +376,17 @@ select,
 textarea {
   touch-action: manipulation; }
 
+/* Custom grids */
+
+.grid__container {
+  display: grid;
+}
+
+.two-columns {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
 /*============================================================================
   #Grid
 ==============================================================================*/
@@ -6996,3 +7007,9 @@ hr {
 
 .store-availability-list__phone {
   margin-bottom: 0; }
+
+/* full page layouts */
+
+.content-container {
+  width: 90%;
+}
