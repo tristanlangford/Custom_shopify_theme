@@ -10,11 +10,23 @@
             {% if section.settings.text_side == "left" %}
                 <div class="grid__container two-columns">
                     <div class="rich-text__text--{{ section.settings.text_size }} rte-setting text-{{ section.settings.text_align }}">{{ section.settings.text }}</div>
-                    <div></div>
+                    {% if section.settings.image1 %}
+                      <div class="grid__image">
+                          <img src="{{ section.settings.image1| img_url: '720x720' }}">
+                      </div>
+                    {% else %}
+                        <div></div>
+                    {% endif %}
                 </div>
             {% else %}
                 <div class="grid__container two-columns">
-                    <div></div> 
+                  {% if section.settings.image1 %}
+                  <div class="grid__image">
+                      <img src="{{ section.settings.image1| img_url: '720x720' }}">
+                  </div>
+                {% else %}
+                    <div></div>
+                {% endif %}
                     <div class="rich-text__text--{{ section.settings.text_size }} rte-setting text-{{ section.settings.text_align }}">{{ section.settings.text }}</div>
                 </div>
             {% endif %}
@@ -65,6 +77,11 @@
                 "label":"Right"
             }
         ]
+     },
+     {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Section 1 image"
      },
      {
        "type": "select",
