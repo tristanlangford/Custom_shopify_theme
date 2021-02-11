@@ -1,6 +1,6 @@
 <div class="full-page-width">
     <div class="section-container">
-        <div class="grid__container two-columns chained-text__grid">
+        <div class="grid__container two-columns chained-text__grid text-{{ section.settings.text_align }}">
             <div class="left">
                 {% unless section.settings.header1 == blank %}
                     <div class="section__sub-heading">
@@ -95,7 +95,7 @@
             "label": "Header 1"
         },
         {
-            "type": "text",
+            "type": "richtext",
             "id": "text1",
             "label": "Text 1"
         },
@@ -105,7 +105,7 @@
             "label": "Header 2"
         },
         {
-            "type": "text",
+            "type": "richtext",
             "id": "text2",
             "label": "Text 2"
         },
@@ -115,7 +115,7 @@
             "label": "Header 3"
         },
         {
-            "type": "text",
+            "type": "richtext",
             "id": "text3",
             "label": "Text 3"
         },
@@ -125,7 +125,7 @@
             "label": "Header 4"
         },
         {
-            "type": "text",
+            "type": "richtext",
             "id": "text4",
             "label": "Text 4"
         }
