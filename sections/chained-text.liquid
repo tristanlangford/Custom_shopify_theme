@@ -1,0 +1,106 @@
+<div class="full-page-width">
+    <div class="section-container">
+        <div class="grid__container two-columns chained-text__grid">
+            <div class="left">
+                <div class="section__sub-heading">
+                    {{ section.settings.header1 }}
+                </div>
+                <div class="rich__text">
+                    {{ section.settings.text1 }}
+                </div>
+            </div>
+            <div class="right">
+                <div class="chain__link">
+
+                </div>
+            </div>
+            <div class="left">
+                <div class="chain__link">
+
+                </div>
+            </div>
+            <div class="right">
+                <div class="section__sub-heading">
+                    {{ section.settings.header2 }}
+                </div>
+                <div class="rich__text">
+                    {{ section.settings.text2 }}
+                </div>
+            </div>
+            <div class="left">
+                <div class="section__sub-heading">
+                    {{ section.settings.header3 }}
+                </div>
+                <div class="rich__text">
+                    {{ section.settings.text3 }}
+                </div>
+            </div>
+            <div class="right">
+                <div class="chain__link">
+
+                </div>
+            </div>
+            <div class="left">
+                <div class="chain__link">
+
+                </div>
+            </div>
+            <div class="right">
+                <div class="section__sub-heading">
+                    {{ section.settings.header4 }}
+                </div>
+                <div class="rich__text">
+                    {{ section.settings.text4 }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Chained text",
+    "settings": [
+        {
+            "type": "select",
+            "id": "text_align",
+            "label": "Text alignment",
+            "default": "left",
+            "options":[
+                {
+                    "value":"left",
+                    "label":"Left"
+                },
+                {
+                    "value":"right",
+                    "label":"Right"
+                },
+                {
+                    "value":"center",
+                    "label":"Center"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "id": "text1",
+            "label": "Text 1"
+        },
+        {
+            "type": "text",
+            "id": "text2",
+            "label": "Text 2"
+        },
+        {
+            "type": "text",
+            "id": "text3",
+            "label": "Text 3"
+        },
+        {
+            "type": "text",
+            "id": "text4",
+            "label": "Text 4"
+        }
+    ]
+}
+{% endschema %}
